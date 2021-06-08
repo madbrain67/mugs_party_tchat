@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 08 juin 2021 à 07:21
+-- Généré le :  mar. 08 juin 2021 à 07:32
 -- Version du serveur :  8.0.18
 -- Version de PHP :  7.2.31
 
@@ -34,11 +34,18 @@ CREATE TABLE IF NOT EXISTS `messenger` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `message` text NOT NULL,
   `date_at` datetime NOT NULL,
-  `cible` int(10) UNSIGNED NOT NULL,
+  `cible` int(10) UNSIGNED DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `cible` (`cible`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `messenger`
+--
+
+INSERT INTO `messenger` (`id`, `user_id`, `message`, `date_at`, `cible`) VALUES
+(2, 3, 'hello world !!', '2021-06-08 09:31:59', NULL);
 
 -- --------------------------------------------------------
 
